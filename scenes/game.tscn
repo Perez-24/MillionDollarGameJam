@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dteu2vuee6rps"]
+
+[ext_resource type="Texture2D" uid="uid://dv4yug5vvn6u6" path="res://MillionDollarGameJam/icon.svg" id="1_5mycn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0sui"]
+size = Vector2(124, 122)
+
+[node name="Game" type="Node2D" unique_id=350489283]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=552199972]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1635392820]
+position = Vector2(93, -77)
+shape = SubResource("RectangleShape2D_k0sui")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1384296532]
+position = Vector2(-66, -22)
+texture = ExtResource("1_5mycn")

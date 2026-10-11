@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://8jckopjw5ah3"]
+
+[ext_resource type="Texture2D" uid="uid://c7umlj17ekdr5" path="res://MillionDollarGameJam/assets/TRUCK_1.png" id="1_7e02g"]
+[ext_resource type="Texture2D" uid="uid://jplml1ab7pxf" path="res://MillionDollarGameJam/assets/TRUCK_2.png" id="2_y3dgw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k0sui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7e02g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y3dgw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umy3q"]
+size = Vector2(20, 25)
+
+[node name="Ship_PLayer" type="CharacterBody2D" unique_id=986727395]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1979100641]
+position = Vector2(0.5, -1.5)
+sprite_frames = SubResource("SpriteFrames_k0sui")
+frame_progress = 0.27272215
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=259852729]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_umy3q")
