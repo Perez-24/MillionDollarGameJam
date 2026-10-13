@@ -3,6 +3,15 @@ extends CharacterBody2D
 var speed = 400.0
 var angular_speed = PI
 
+var acceleration = 200.0
+var friction = 100.0
+
+#CONTROL ENGINE FLICKER ANIMATION
+@onready var animationplayer: AnimationPlayer = $Jets/AnimationPlayer
+func _ready() -> void:
+		animationplayer.play("Jet Combustion")
+
+#TANK CONTROLS
 func _physics_process(delta):
 	var direction = 0.0
 
@@ -13,10 +22,13 @@ func _physics_process(delta):
 
 	rotation += angular_speed * direction * delta
 
-	var movement = Vector2.ZERO
-
 	if Input.is_action_pressed("ui_up"):
-		movement = Vector2.UP.rotated(rotation) * speed
+		var movement = Vector2.UP.rotated(rotation) * speed
+		velocity = velocity.move_toward(movement, acceleration * delta)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 
-	velocity = movement
+	$Jets.visible = Input.is_action_pressed("ui_up")
+
 	move_and_slide()
+	

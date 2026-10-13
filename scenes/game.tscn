@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dteu2vuee6rps"]
 
 [ext_resource type="PackedScene" uid="uid://8jckopjw5ah3" path="res://MillionDollarGameJam/scenes/Ship_Player.tscn" id="1_5mycn"]
-[ext_resource type="Texture2D" uid="uid://4y1jr7mtyphw" path="res://MillionDollarGameJam/assets/Asteroid.jpg" id="2_70l0f"]
+[ext_resource type="Texture2D" uid="uid://4y1jr7mtyphw" path="res://MillionDollarGameJam/assets/Placeholders/Asteroid.jpg" id="2_70l0f"]
 [ext_resource type="Texture2D" uid="uid://g07yry6p4jad" path="res://MillionDollarGameJam/assets/BACKING.png" id="3_h4101"]
+[ext_resource type="Texture2D" uid="uid://q505jiqe6e5k" path="res://MillionDollarGameJam/assets/Placeholders/Start point.png" id="4_h4101"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_k0sui"]
 
@@ -639,11 +640,6 @@ sources/0 = SubResource("TileSetAtlasSource_be2bj")
 
 [node name="Game" type="Node2D" unique_id=1306821708]
 
-[node name="Ship_PLayer" parent="." unique_id=986727395 instance=ExtResource("1_5mycn")]
-position = Vector2(-1, -2)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=726129733]
-
 [node name="TileMap" type="TileMap" parent="." unique_id=578628985]
 material = SubResource("CanvasItemMaterial_k0sui")
 tile_set = SubResource("TileSet_umy3q")
@@ -651,7 +647,21 @@ format = 2
 layer_0/tile_data = PackedInt32Array(131074, 917504, 12, 65539, 917504, 12, 131075, 917504, 12, 65538, 917504, 12, -262138, 917504, 12, -327674, 917504, 12, -327673, 917504, 12, -262137, 917504, 12, -786426, 917504, 12, -786425, 917504, 12, -720889, 917504, 12, -720890, 917504, 12, -983030, 917504, 12, -983029, 917504, 12, -917493, 917504, 12, -917494, 917504, 12)
 
 [node name="Backing" type="Sprite2D" parent="." unique_id=880597916]
-z_index = -1
-position = Vector2(-105.499756, -418.5)
+z_index = -3
+position = Vector2(63, -250)
 scale = Vector2(9.151, 6.6387506)
 texture = ExtResource("3_h4101")
+
+[node name="StartPoint" type="Sprite2D" parent="." unique_id=285474877]
+z_index = -2
+position = Vector2(-122.000015, 7)
+scale = Vector2(0.37086794, 0.3656249)
+texture = ExtResource("4_h4101")
+
+[node name="Ship_PLayer" parent="." unique_id=986727395 instance=ExtResource("1_5mycn")]
+position = Vector2(-3, -2)
+
+[node name="Camera2D" type="Camera2D" parent="Ship_PLayer" unique_id=726129733]
+position = Vector2(3.000023, 1.9999995)
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
