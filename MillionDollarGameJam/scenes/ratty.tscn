@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ddhcjoh4sq78t"]
+
+[ext_resource type="Script" uid="uid://digjv7ijbk1bq" path="res://MillionDollarGameJam/scripts/ratty.gd" id="1_k8u2e"]
+[ext_resource type="Texture2D" uid="uid://du6gcc60myru5" path="res://MillionDollarGameJam/assets/Enemies/ENM3_f1.png" id="1_q4hy7"]
+[ext_resource type="Texture2D" uid="uid://c4krey36bycqy" path="res://MillionDollarGameJam/assets/Enemies/ENM3_f2.png" id="2_k8u2e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fvolp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q4hy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_k8u2e")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awdc5"]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1519342496]
+collision_layer = 4
+collision_mask = 3
+gravity_scale = 0.0
+script = ExtResource("1_k8u2e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1550080238]
+sprite_frames = SubResource("SpriteFrames_fvolp")
+frame_progress = 0.5653492
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1946416775]
+shape = SubResource("RectangleShape2D_awdc5")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1616971933]
+position = Vector2(0, 3)
+rect = Rect2(-52, -66, 104, 131)
