@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://8jckopjw5ah3"]
 
-[ext_resource type="Texture2D" uid="uid://c7umlj17ekdr5" path="res://MillionDollarGameJam/assets/TRUCK_1.png" id="1_7e02g"]
-[ext_resource type="Script" uid="uid://k54u6lakcvnm" path="res://MillionDollarGameJam/scripts/sprite_2d.gd" id="1_y3dgw"]
-[ext_resource type="Texture2D" uid="uid://jplml1ab7pxf" path="res://MillionDollarGameJam/assets/TRUCK_2.png" id="2_y3dgw"]
-[ext_resource type="Texture2D" uid="uid://bp50kxc50hrng" path="res://MillionDollarGameJam/assets/BULLETS.png" id="4_4rlcn"]
+[ext_resource type="Script" uid="uid://ds7yffl5tdd07" path="res://MillionDollarGameJam/scripts/ShipController.gd" id="1_6em1c"]
+[ext_resource type="Texture2D" uid="uid://c7umlj17ekdr5" path="res://MillionDollarGameJam/assets/Player/TRUCK_1.png" id="1_7e02g"]
+[ext_resource type="Texture2D" uid="uid://jplml1ab7pxf" path="res://MillionDollarGameJam/assets/Player/TRUCK_2.png" id="2_y3dgw"]
+[ext_resource type="Texture2D" uid="uid://bp50kxc50hrng" path="res://MillionDollarGameJam/assets/Player/BULLETS.png" id="4_4rlcn"]
+[ext_resource type="PackedScene" uid="uid://cojj3sqfgr3ed" path="res://MillionDollarGameJam/scenes/Bullet.tscn" id="5_6em1c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0sui"]
 animations = [{
@@ -73,7 +74,8 @@ _data = {
 }
 
 [node name="Ship_PLayer" type="CharacterBody2D" unique_id=986727395]
-script = ExtResource("1_y3dgw")
+script = ExtResource("1_6em1c")
+bullet_scene = ExtResource("5_6em1c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1979100641]
 position = Vector2(0.5, -1.5)
@@ -94,3 +96,6 @@ texture = ExtResource("4_4rlcn")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Jets" unique_id=1592026640]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_kdrcq")
+
+[node name="Bullet" parent="." unique_id=1874750010 instance=ExtResource("5_6em1c")]
+position = Vector2(0, -33)
