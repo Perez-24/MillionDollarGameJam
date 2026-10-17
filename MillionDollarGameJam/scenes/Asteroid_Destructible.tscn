@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dhd1hlary3cyc"]
+
+[ext_resource type="Script" uid="uid://cf37gqkpj52x3" path="res://MillionDollarGameJam/scripts/asteroid_destructible_script.gd" id="1_usj43"]
+[ext_resource type="Texture2D" uid="uid://bjps380uakrk4" path="res://MillionDollarGameJam/assets/Environment/BREAKABLE ASTRD 0.png" id="2_usj43"]
+[ext_resource type="Texture2D" uid="uid://cltbl18t3bmpx" path="res://MillionDollarGameJam/assets/Environment/BREAKABLE ASTRD 1.png" id="3_33p0u"]
+[ext_resource type="Texture2D" uid="uid://cwtir1a7oftct" path="res://MillionDollarGameJam/assets/Environment/BREAKABLE ASTRD 2.png" id="4_hf3kb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_euhey"]
+radius = 18.027756
+
+[node name="AsteroidDestructible" type="Node2D" unique_id=1509680385]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1367620239]
+script = ExtResource("1_usj43")
+
+[node name="BreakableAstrd0" type="Sprite2D" parent="RigidBody2D" unique_id=231861445]
+position = Vector2(-2.0000038, -2)
+scale = Vector2(1, 1.075)
+texture = ExtResource("2_usj43")
+
+[node name="BreakableAstrdPhase2" type="Sprite2D" parent="RigidBody2D" unique_id=627421036]
+position = Vector2(-2.0000038, -2)
+scale = Vector2(1, 1.075)
+texture = ExtResource("3_33p0u")
+
+[node name="BreakableAstrdPhase3" type="Sprite2D" parent="RigidBody2D" unique_id=1259589682]
+position = Vector2(-2.0000038, -2)
+scale = Vector2(1, 1.075)
+texture = ExtResource("4_hf3kb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1424080186]
+position = Vector2(-1, -2)
+shape = SubResource("CircleShape2D_euhey")

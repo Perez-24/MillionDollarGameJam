@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cojj3sqfgr3ed"]
+
+[ext_resource type="Script" uid="uid://bbfi8wngobdda" path="res://MillionDollarGameJam/scripts/Bullet_script.gd" id="1_3off6"]
+[ext_resource type="Texture2D" uid="uid://bp50kxc50hrng" path="res://MillionDollarGameJam/assets/Player/BULLETS.png" id="2_8h06v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0sui"]
+size = Vector2(12, 23)
+
+[node name="Bullet" type="Area2D" unique_id=1439007416]
+script = ExtResource("1_3off6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926594048]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_k0sui")
+
+[node name="Bullets" type="Sprite2D" parent="." unique_id=1413372844]
+texture = ExtResource("2_8h06v")
