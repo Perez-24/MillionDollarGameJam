@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5fc83xrjeqc5"
+path="res://.godot/imported/Enemy Hit.ogg-a0b717a86fb0ce7adf578589c1d325fb.oggvorbisstr"
+
+[deps]
+
+source_file="res://MillionDollarGameJam/assets/SFX/Enemy Hit.ogg"
+dest_files=["res://.godot/imported/Enemy Hit.ogg-a0b717a86fb0ce7adf578589c1d325fb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7c3agkp7sv4o"
-path="res://.godot/imported/HAZE.png-e8ef054e9af034e82cb49935d7d73a17.ctex"
+uid="uid://wigh4yknb031"
+path="res://.godot/imported/TRUCK EXPLD 3.png-5013cb454324834562c0ba3ac05098ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MillionDollarGameJam/assets/HAZE.png"
-dest_files=["res://.godot/imported/HAZE.png-e8ef054e9af034e82cb49935d7d73a17.ctex"]
+source_file="res://MillionDollarGameJam/assets/Player/TRUCK EXPLD 3.png"
+dest_files=["res://.godot/imported/TRUCK EXPLD 3.png-5013cb454324834562c0ba3ac05098ae.ctex"]
 
 [params]
 

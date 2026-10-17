@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp50kxc50hrng"
-path="res://.godot/imported/BULLETS.png-e88a250aea90ad39cc86f6654d23dfd0.ctex"
+uid="uid://c1dig51hs203y"
+path="res://.godot/imported/RADIO.png-8f2056e4f406365e097cf29c47534a63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MillionDollarGameJam/assets/BULLETS.png"
-dest_files=["res://.godot/imported/BULLETS.png-e88a250aea90ad39cc86f6654d23dfd0.ctex"]
+source_file="res://MillionDollarGameJam/assets/UI/RADIO.png"
+dest_files=["res://.godot/imported/RADIO.png-8f2056e4f406365e097cf29c47534a63.ctex"]
 
 [params]
 

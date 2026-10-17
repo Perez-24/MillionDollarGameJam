@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm3egecam7tub"
-path="res://.godot/imported/PLAYER_1.png-28216aa19f6c586f81389a9b670e8690.ctex"
+uid="uid://bjps380uakrk4"
+path="res://.godot/imported/BREAKABLE ASTRD 0.png-47bb3ecb61b5f8a62e93e6e716b535db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MillionDollarGameJam/assets/PLAYER_1.png"
-dest_files=["res://.godot/imported/PLAYER_1.png-28216aa19f6c586f81389a9b670e8690.ctex"]
+source_file="res://MillionDollarGameJam/assets/Environment/BREAKABLE ASTRD 0.png"
+dest_files=["res://.godot/imported/BREAKABLE ASTRD 0.png-47bb3ecb61b5f8a62e93e6e716b535db.ctex"]
 
 [params]
 

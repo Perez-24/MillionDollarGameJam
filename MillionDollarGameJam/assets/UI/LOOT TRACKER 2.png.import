@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jplml1ab7pxf"
-path="res://.godot/imported/TRUCK_2.png-1cad1b67fdbde61723b1e80496cd6ace.ctex"
+uid="uid://bl5xoav1yp11i"
+path="res://.godot/imported/LOOT TRACKER 2.png-272787c2e53e084608925b6aea649ed3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MillionDollarGameJam/assets/TRUCK_2.png"
-dest_files=["res://.godot/imported/TRUCK_2.png-1cad1b67fdbde61723b1e80496cd6ace.ctex"]
+source_file="res://MillionDollarGameJam/assets/UI/LOOT TRACKER 2.png"
+dest_files=["res://.godot/imported/LOOT TRACKER 2.png-272787c2e53e084608925b6aea649ed3.ctex"]
 
 [params]
 
