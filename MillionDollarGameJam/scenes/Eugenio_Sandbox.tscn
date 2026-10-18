@@ -2389,7 +2389,6 @@ texture = ExtResource("4_eoa12")
 
 [node name="Ship_PLayer" parent="." unique_id=986727395 instance=ExtResource("5_fwbt6")]
 position = Vector2(-130, 4)
-collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Ship_PLayer" unique_id=726129733]
 position = Vector2(3.000023, 1.9999995)
