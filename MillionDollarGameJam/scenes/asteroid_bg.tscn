@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b528k0yl4ku6w"]
+
+[ext_resource type="Texture2D" uid="uid://b751lav2m84h3" path="res://MillionDollarGameJam/assets/Environment/background asteroids.png" id="1_y1pci"]
+
+[node name="Node2D" type="Node2D" unique_id=1390713507]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1293118817]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(300, 220)
+autoscroll = Vector2(30, 30)
+repeat_times = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=714174043]
+texture_repeat = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_y1pci")

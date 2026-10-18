@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://4rsvo1arcbbr"]
+[gd_scene format=3 uid="uid://cipsdumdmdsb5"]
 
 [ext_resource type="Texture2D" uid="uid://dwie4ic63i8qg" path="res://MillionDollarGameJam/assets/Enemies/ENM1_f1.png" id="1_6btj7"]
 [ext_resource type="Script" uid="uid://bmrb048buvah3" path="res://MillionDollarGameJam/scripts/ratson.gd" id="1_nnjh0"]

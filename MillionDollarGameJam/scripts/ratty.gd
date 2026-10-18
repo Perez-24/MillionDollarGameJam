@@ -19,7 +19,6 @@ func take_hit() -> void:
 		return
 
 	is_destroying = true
-	print("hit!")
 	# Disable further collisions and stop movement.
 	collision_shape.set_deferred("disabled", true)
 	collision_layer = 0

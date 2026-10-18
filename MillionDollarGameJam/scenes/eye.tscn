@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://deeus005rbegb"]
+
+[ext_resource type="Script" uid="uid://cpiulrser302h" path="res://MillionDollarGameJam/scripts/enemyeye.gd" id="1_cc14b"]
+[ext_resource type="Texture2D" uid="uid://dt42dn3s4y2ld" path="res://MillionDollarGameJam/assets/EYE/CELS/backing/backing1.png" id="2_hc77q"]
+[ext_resource type="Texture2D" uid="uid://caonuxu0ft5m3" path="res://MillionDollarGameJam/assets/EYE/CELS/pupils/pupils1.png" id="3_nhqup"]
+[ext_resource type="Texture2D" uid="uid://cdla1b6eo01n8" path="res://MillionDollarGameJam/assets/EYE/CELS/eyelid/eyelid1.png" id="4_kulgy"]
+[ext_resource type="Texture2D" uid="uid://2367e04whu3e" path="res://MillionDollarGameJam/assets/EYE/CELS/eyelid/eyelid2.png" id="5_iof2t"]
+[ext_resource type="Texture2D" uid="uid://dqsgw4skh3p6q" path="res://MillionDollarGameJam/assets/EYE/CELS/eyelid/eyelid3.png" id="6_jc7qy"]
+[ext_resource type="Texture2D" uid="uid://c4sf256qrsjer" path="res://MillionDollarGameJam/assets/EYE/CELS/eyelid/eyelid4.png" id="7_k3xf2"]
+[ext_resource type="Texture2D" uid="uid://0vrqmvyjirka" path="res://MillionDollarGameJam/assets/EYE/CELS/eyelid/eyelid5.png" id="8_f6fv3"]
+[ext_resource type="Texture2D" uid="uid://2d3snwoae4vs" path="res://MillionDollarGameJam/assets/EYE/CELS/eyelid/eyelid6.png" id="9_idcio"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fvolp"]
+animations = [{
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("4_kulgy")
+}, {
+"duration": 0.2,
+"texture": ExtResource("5_iof2t")
+}, {
+"duration": 0.2,
+"texture": ExtResource("6_jc7qy")
+}, {
+"duration": 0.2,
+"texture": ExtResource("7_k3xf2")
+}, {
+"duration": 0.2,
+"texture": ExtResource("8_f6fv3")
+}, {
+"duration": 10.0,
+"texture": ExtResource("9_idcio")
+}, {
+"duration": 0.2,
+"texture": ExtResource("8_f6fv3")
+}, {
+"duration": 0.2,
+"texture": ExtResource("7_k3xf2")
+}, {
+"duration": 0.2,
+"texture": ExtResource("6_jc7qy")
+}, {
+"duration": 0.2,
+"texture": ExtResource("5_iof2t")
+}],
+"loop": 1,
+"name": &"blink",
+"speed": 5.0
+}]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=244945673]
+gravity_scale = 0.0
+script = ExtResource("1_cc14b")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=2028363510]
+scale = Vector2(2, 2)
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=933221085]
+texture = ExtResource("2_hc77q")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=901159080]
+scroll_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=605954892]
+texture = ExtResource("3_nhqup")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1527400658]
+scale = Vector2(2, 2)
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax2D" unique_id=547431982]
+sprite_frames = SubResource("SpriteFrames_fvolp")
+animation = &"blink"
+autoplay = "blink"
+frame_progress = 0.8037988

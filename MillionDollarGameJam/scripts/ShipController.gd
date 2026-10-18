@@ -51,6 +51,7 @@ func _physics_process(delta):
 	fire_cooldown = maxf(fire_cooldown - delta, 0.0)
 
 	if Input.is_action_pressed("shoot") and fire_cooldown <= 0.0:
+		print("shoot!")
 		shoot()
 		fire_cooldown = fire_rate
 	
