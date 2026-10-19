@@ -6,6 +6,7 @@ extends RigidBody2D
 @export var min_spin: float = 0.3
 @export var max_spin: float = 1.5
 
+@onready var sound : AudioStreamPlayer = $AudioStreamPlayer
 func _ready() -> void:
 	gravity_scale = 0.0
 
@@ -22,3 +23,6 @@ func _ready() -> void:
 	angular_velocity = randf_range(
 		min_spin, max_spin
 	) * [-1.0, 1.0].pick_random()
+
+func take_hit() -> void:
+	sound.play()

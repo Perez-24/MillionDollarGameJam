@@ -10,6 +10,7 @@ var is_destroying: bool = false
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 
+@onready var sound : AudioStreamPlayer = $AudioStreamPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play()
@@ -32,6 +33,7 @@ func take_hit() -> void:
 
 	is_destroying = true
 	print("hit!")
+	sound.play()
 	# Disable further collisions and stop movement.
 	collision_shape.set_deferred("disabled", true)
 	collision_layer = 0

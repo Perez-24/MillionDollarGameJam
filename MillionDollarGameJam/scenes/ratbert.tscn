@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dn8nlv4h5mws2" path="res://MillionDollarGameJam/scripts/ratbert.gd" id="1_m1fje"]
 [ext_resource type="Texture2D" uid="uid://bx8udoxkmi8xx" path="res://MillionDollarGameJam/assets/Enemies/ENM2_f1.png" id="2_jdm3o"]
 [ext_resource type="Texture2D" uid="uid://drukbggt1m500" path="res://MillionDollarGameJam/assets/Enemies/ENM2_f2.png" id="3_u6qam"]
+[ext_resource type="AudioStream" uid="uid://b5fc83xrjeqc5" path="res://MillionDollarGameJam/assets/SFX/Enemy Hit.ogg" id="4_qpa03"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fvolp"]
 animations = [{
@@ -37,3 +38,6 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_rjcnt")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=498875459]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=141428396]
+stream = ExtResource("4_qpa03")

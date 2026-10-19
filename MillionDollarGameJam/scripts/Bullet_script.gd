@@ -6,7 +6,9 @@ extends Area2D
 
 var direction: Vector2 = Vector2.UP
 
+@onready var sound : AudioStreamPlayer = $AudioStreamPlayer
 func _ready() -> void:
+	sound.play()
 	# Bullet hits wall
 	body_entered.connect(_on_body_entered)
 

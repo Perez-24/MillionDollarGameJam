@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dwie4ic63i8qg" path="res://MillionDollarGameJam/assets/Enemies/ENM1_f1.png" id="1_6btj7"]
 [ext_resource type="Script" uid="uid://bmrb048buvah3" path="res://MillionDollarGameJam/scripts/ratson.gd" id="1_nnjh0"]
 [ext_resource type="Texture2D" uid="uid://174t1gvcxkgq" path="res://MillionDollarGameJam/assets/Enemies/ENM1_f2.png" id="2_j23ev"]
+[ext_resource type="AudioStream" uid="uid://b5fc83xrjeqc5" path="res://MillionDollarGameJam/assets/SFX/Enemy Hit.ogg" id="4_75lkb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_awdc5"]
 resource_name = "E"
@@ -36,5 +37,8 @@ frame_progress = 0.60080934
 shape = SubResource("RectangleShape2D_jmhds")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=204210993]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=87962158]
+stream = ExtResource("4_75lkb")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

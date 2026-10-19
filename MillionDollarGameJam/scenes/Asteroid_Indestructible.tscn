@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqjg4ni023o68" path="res://MillionDollarGameJam/scripts/asteroid_indestructible.gd" id="1_b3lie"]
 [ext_resource type="Texture2D" uid="uid://dl5g633c0bpa6" path="res://MillionDollarGameJam/assets/Environment/LARGE ASTRD.png" id="2_mepij"]
+[ext_resource type="AudioStream" uid="uid://dgjheau0b6yg8" path="res://MillionDollarGameJam/assets/SFX/Unbreakable Asteroid.ogg" id="3_mepij"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_euhey"]
 radius = 49.24429
@@ -17,3 +18,6 @@ texture = ExtResource("2_mepij")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1424080186]
 position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_euhey")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="RigidBody2D" unique_id=1888908699]
+stream = ExtResource("3_mepij")

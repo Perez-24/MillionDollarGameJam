@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bbfi8wngobdda" path="res://MillionDollarGameJam/scripts/Bullet_script.gd" id="1_3off6"]
 [ext_resource type="Texture2D" uid="uid://bp50kxc50hrng" path="res://MillionDollarGameJam/assets/Player/BULLETS.png" id="2_8h06v"]
+[ext_resource type="AudioStream" uid="uid://bo26d5rxtu1ky" path="res://MillionDollarGameJam/assets/SFX/LaserPew.ogg" id="3_trebx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0sui"]
 size = Vector2(12, 23)
@@ -17,3 +18,6 @@ shape = SubResource("RectangleShape2D_k0sui")
 
 [node name="Bullets" type="Sprite2D" parent="." unique_id=1413372844]
 texture = ExtResource("2_8h06v")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1795460560]
+stream = ExtResource("3_trebx")

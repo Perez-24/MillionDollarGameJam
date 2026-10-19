@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c4sf256qrsjer" path="res://MillionDollarGameJam/assets/EYE/CELS/eyelid/eyelid4.png" id="7_k3xf2"]
 [ext_resource type="Texture2D" uid="uid://0vrqmvyjirka" path="res://MillionDollarGameJam/assets/EYE/CELS/eyelid/eyelid5.png" id="8_f6fv3"]
 [ext_resource type="Texture2D" uid="uid://2d3snwoae4vs" path="res://MillionDollarGameJam/assets/EYE/CELS/eyelid/eyelid6.png" id="9_idcio"]
+[ext_resource type="AudioStream" uid="uid://cif5eoa02irqx" path="res://MillionDollarGameJam/assets/SFX/BossAppears.ogg" id="10_hc77q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fvolp"]
 animations = [{
@@ -73,4 +74,7 @@ scroll_scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_fvolp")
 animation = &"blink"
 autoplay = "blink"
-frame_progress = 0.8037988
+frame_progress = 0.5624611
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=3438838]
+stream = ExtResource("10_hc77q")

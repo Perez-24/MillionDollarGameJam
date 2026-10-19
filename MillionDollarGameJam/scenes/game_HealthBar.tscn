@@ -2347,7 +2347,6 @@ autoplay = true
 position = Vector2(245, 175)
 
 [node name="Node2D" parent="." unique_id=1390713507 instance=ExtResource("2_6x4wt")]
-visible = false
 
 [node name="Layer0" type="TileMapLayer" parent="." unique_id=537569135]
 use_parent_material = true
@@ -2370,6 +2369,7 @@ texture = ExtResource("6_kqyuf")
 
 [node name="Player" parent="." unique_id=986727395 instance=ExtResource("7_b2dra")]
 position = Vector2(-133, 5)
+bullet_scene = null
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=726129733]
 position = Vector2(3.000023, 1.9999995)

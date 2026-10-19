@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://jplml1ab7pxf" path="res://MillionDollarGameJam/assets/Player/TRUCK_2.png" id="2_y3dgw"]
 [ext_resource type="Texture2D" uid="uid://bp50kxc50hrng" path="res://MillionDollarGameJam/assets/Player/BULLETS.png" id="4_4rlcn"]
 [ext_resource type="PackedScene" uid="uid://cojj3sqfgr3ed" path="res://MillionDollarGameJam/scenes/Bullet.tscn" id="5_6em1c"]
+[ext_resource type="AudioStream" uid="uid://l2q2n8r2fwef" path="res://MillionDollarGameJam/assets/SFX/Boost.ogg" id="6_kdrcq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0sui"]
 animations = [{
@@ -101,3 +102,7 @@ libraries/ = SubResource("AnimationLibrary_kdrcq")
 
 [node name="Bullet" parent="." unique_id=1874750010 instance=ExtResource("5_6em1c")]
 position = Vector2(0, -33)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=915678457]
+stream = ExtResource("6_kdrcq")
+volume_db = 1.778

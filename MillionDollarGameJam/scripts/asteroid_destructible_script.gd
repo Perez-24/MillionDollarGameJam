@@ -15,6 +15,8 @@ extends RigidBody2D
 @onready var debris_sprite: Sprite2D = $BreakableAstrdPhase3
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
+@onready var sound : AudioStreamPlayer = $AudioStreamPlayer
+
 var is_destroying: bool = false
 
 func _ready() -> void:
@@ -35,7 +37,8 @@ func take_hit() -> void:
 		return
 
 	is_destroying = true
-
+	
+	sound.play()
 	# Disable further collisions and stop movement.
 	collision_shape.set_deferred("disabled", true)
 	collision_layer = 0

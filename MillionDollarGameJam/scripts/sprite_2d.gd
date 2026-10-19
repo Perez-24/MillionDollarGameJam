@@ -8,6 +8,7 @@ var friction = 100.0
 
 #CONTROL ENGINE FLICKER ANIMATION
 @onready var animationplayer: AnimationPlayer = $Jets/AnimationPlayer
+@onready var sound : AudioStreamPlayer = $AudioStreamPlayer
 func _ready() -> void:
 		animationplayer.play("Jet Combustion")
 
@@ -23,6 +24,7 @@ func _physics_process(delta):
 	rotation += angular_speed * direction * delta
 
 	if Input.is_action_pressed("ui_up"):
+		sound.play()
 		var movement = Vector2.UP.rotated(rotation) * speed
 		velocity = velocity.move_toward(movement, acceleration * delta)
 	else:

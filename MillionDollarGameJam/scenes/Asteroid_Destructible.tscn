@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjps380uakrk4" path="res://MillionDollarGameJam/assets/Environment/BREAKABLE ASTRD 0.png" id="2_usj43"]
 [ext_resource type="Texture2D" uid="uid://cltbl18t3bmpx" path="res://MillionDollarGameJam/assets/Environment/BREAKABLE ASTRD 1.png" id="3_33p0u"]
 [ext_resource type="Texture2D" uid="uid://cwtir1a7oftct" path="res://MillionDollarGameJam/assets/Environment/BREAKABLE ASTRD 2.png" id="4_hf3kb"]
+[ext_resource type="AudioStream" uid="uid://cuafatqyf7q1t" path="res://MillionDollarGameJam/assets/SFX/Asteroid Break.ogg" id="5_33p0u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_euhey"]
 radius = 18.027756
@@ -12,6 +13,9 @@ radius = 18.027756
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1367620239]
 script = ExtResource("1_usj43")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="RigidBody2D" unique_id=155686021]
+stream = ExtResource("5_33p0u")
 
 [node name="BreakableAstrd0" type="Sprite2D" parent="RigidBody2D" unique_id=231861445]
 position = Vector2(-2.0000038, -2)
