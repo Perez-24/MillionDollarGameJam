@@ -33,7 +33,7 @@ func takeDamage(amount: int = 1) -> void:
 
 	if health <= 0:
 		ship_destroyed.emit()
-		print("Ship destroyed!")
+		print("You are dead! Game Over")
 
 # WEAPONS
 @export var bullet_scene: PackedScene
