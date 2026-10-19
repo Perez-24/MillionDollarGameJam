@@ -1,5 +1,39 @@
 extends CharacterBody2D
 
+# HEALTH
+@onready var health_bar = $"../HealthBar/TextureRect"
+@export var health_textures: Array[Texture2D] = []
+@export var max_health: int = 8
+var health: int = 8
+var damage_cooldown: float = 1.0
+var damage_timer: float = 0.0
+
+signal health_changed(current_health: int)
+signal ship_destroyed
+
+func update_health_bar() -> void:
+	if health_bar == null or health_textures.is_empty():
+		return
+
+	var index = max_health - health
+
+	index = clampi(index, 0, health_textures.size() - 1)
+	health_bar.texture = health_textures[index]
+
+func takeDamage(amount: int = 1) -> void:
+	if health <= 0 or damage_timer > 0.0:
+		return
+
+	health = max(health - amount, 0)
+	health_bar.update_health_bar(health, max_health)
+	damage_timer = damage_cooldown
+
+	health_changed.emit(health)
+	print("Ship health: ", health, "/", max_health)
+
+	if health <= 0:
+		ship_destroyed.emit()
+		print("You are dead! Game Over")
 
 # WEAPONS
 @export var bullet_scene: PackedScene
@@ -16,20 +50,23 @@ func shoot() -> void:
 
 var fire_cooldown: float = 0.0
 
-var speed = 400.0
+var speed = 200.0
 var angular_speed = PI
 
-var acceleration = 200.0
+var acceleration = 100.0
 var friction = 100.0
 
 #CONTROL ENGINE FLICKER ANIMATION
 @onready var animationplayer: AnimationPlayer = $Jets/AnimationPlayer
 func _ready() -> void:
+		health = max_health
 		animationplayer.play("Jet Combustion")
+		health_bar.update_health_bar(health, max_health)
 
 #TANK CONTROLS
 func _physics_process(delta):
 	var direction = 0.0
+	damage_timer -= delta
 
 	if Input.is_action_pressed("ui_left"):
 		direction = -1.0
@@ -47,6 +84,17 @@ func _physics_process(delta):
 	$Jets.visible = Input.is_action_pressed("ui_up")
 
 	move_and_slide()
+	
+	if damage_timer > 0.0:
+		damage_timer -= delta
+
+	for i in get_slide_collision_count():
+		takeDamage()
+		#var collision = get_slide_collision(i)
+		#var body = collision.get_collider()
+#
+	#if body.is_in_group("damaging"):
+		#takeDamage()
 	
 	fire_cooldown = maxf(fire_cooldown - delta, 0.0)
 
