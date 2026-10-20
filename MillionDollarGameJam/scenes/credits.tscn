@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cxdw3am21cotv"]
+
+[node name="MarginContainer" type="MarginContainer" unique_id=1878587052]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=668820785]
+layout_mode = 2
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=842786622]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/CenterContainer" unique_id=1019687823]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer" unique_id=199122197]
+layout_mode = 2
+text = "CREDITS:
+"
