@@ -1,8 +1,27 @@
 [gd_scene format=3 uid="uid://cxdw3am21cotv"]
 
+[ext_resource type="Script" uid="uid://cuheidcvr5f2u" path="res://MillionDollarGameJam/scripts/credits.gd" id="1_b0383"]
+[ext_resource type="Texture2D" uid="uid://mvjvjtpfjogl" path="res://MillionDollarGameJam/assets/UI/warp trading credits page.png" id="1_fe8iq"]
+[ext_resource type="FontFile" uid="uid://bk0crjvtjnjl5" path="res://MillionDollarGameJam/assets/Fonts/FZâJâ^âJâ^é⌐é╚.otf" id="2_2qvra"]
+[ext_resource type="AudioStream" uid="uid://pvo4s0tcbipo" path="res://MillionDollarGameJam/assets/Music/Vibert.ogg" id="2_d3fry"]
+[ext_resource type="Theme" uid="uid://c0turqa8mdced" path="res://MillionDollarGameJam/assets/UI/new_theme.tres" id="3_2qvra"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fvolp"]
+font = ExtResource("2_2qvra")
+font_size = 20
+font_color = Color(0.8627451, 0.93333334, 0, 1)
+
 [node name="MarginContainer" type="MarginContainer" unique_id=1878587052]
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_b0383")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=459644580]
+stream = ExtResource("2_d3fry")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1402452806]
+layout_mode = 2
+texture = ExtResource("1_fe8iq")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=668820785]
 layout_mode = 2
@@ -17,4 +36,18 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer" unique_id=199122197]
 layout_mode = 2
 text = "CREDITS:
+Director: Christian Aggari
+Lead Developer: Eugenio Perez
+Lead Artist: Ishmaiah Dado
+Main Composer: Esteban A.
 "
+label_settings = SubResource("LabelSettings_fvolp")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/CenterContainer/VBoxContainer" unique_id=174789309]
+layout_mode = 2
+theme = ExtResource("3_2qvra")
+theme_override_colors/font_color = Color(0.8627451, 0.93333334, 0, 1)
+text = "Replay?"
+
+[connection signal="pressed" from="HBoxContainer/CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
