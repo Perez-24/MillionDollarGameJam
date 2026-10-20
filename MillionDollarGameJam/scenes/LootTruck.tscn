@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bjojkn36omovy" path="res://MillionDollarGameJam/assets/Player/LOOT_TRUCK.png" id="1_4ahxl"]
 [ext_resource type="Script" uid="uid://do1htesa8yu14" path="res://MillionDollarGameJam/scenes/LootTruck.gd" id="1_xh86y"]
+[ext_resource type="AudioStream" uid="uid://dgnan3nnq7eu5" path="res://MillionDollarGameJam/assets/SFX/Select.ogg" id="3_xldb4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0txnq"]
 radius = 28.635643
@@ -20,3 +21,6 @@ texture = ExtResource("1_4ahxl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=493624390]
 position = Vector2(4, 0)
 shape = SubResource("CircleShape2D_0txnq")
+
+[node name="LootPickup" type="AudioStreamPlayer" parent="Area2D" unique_id=808779]
+stream = ExtResource("3_xldb4")

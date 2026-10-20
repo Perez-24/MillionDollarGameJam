@@ -1,13 +1,19 @@
 extends CharacterBody2D
 
 # HEALTH
+@onready var explosion = $Explosion
 @onready var health_bar = $"../HealthBar/TextureRect"
 @onready var loot_counter = $"../Counter/Counter"
 @export var health_textures: Array[Texture2D] = []
 @export var max_health: int = 8
+@onready var explosion_sfx: AudioStreamPlayer = $AudioStreamBlowUpShip
+@onready var takeDamage_sfx: AudioStreamPlayer = $AudioStreamTakeDamage
+
 var health: int = 8
 var damage_cooldown: float = 1.0
 var damage_timer: float = 0.0
+var is_destroyed: bool = false
+
 
 signal health_changed(current_health: int)
 signal ship_destroyed
@@ -20,6 +26,15 @@ func update_health_bar() -> void:
 
 	index = clampi(index, 0, health_textures.size() - 1)
 	health_bar.texture = health_textures[index]
+	
+func play_explosion() -> void:
+	is_destroyed = true
+	velocity = Vector2.ZERO
+	$Jets.hide()
+	explosion.show()
+	explosion.play("default")
+	explosion_sfx.play()
+
 
 func takeDamage(amount: int = 1) -> void:
 	if health <= 0 or damage_timer > 0.0:
@@ -28,12 +43,14 @@ func takeDamage(amount: int = 1) -> void:
 	health = max(health - amount, 0)
 	health_bar.update_health_bar(health, max_health)
 	damage_timer = damage_cooldown
+	takeDamage_sfx.play()
 
 	health_changed.emit(health)
 	print("Ship health: ", health, "/", max_health)
 
 	if health <= 0:
 		ship_destroyed.emit()
+		play_explosion()
 		print("You are dead! Game Over")
 
 # WEAPONS
@@ -75,6 +92,9 @@ func _ready() -> void:
 
 #TANK CONTROLS
 func _physics_process(delta):
+	#If ship is destroyed, disable controls
+	if is_destroyed:
+		return
 	var direction = 0.0
 	damage_timer -= delta
 

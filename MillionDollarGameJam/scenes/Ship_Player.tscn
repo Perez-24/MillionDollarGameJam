@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bp50kxc50hrng" path="res://MillionDollarGameJam/assets/Player/BULLETS.png" id="4_4rlcn"]
 [ext_resource type="PackedScene" uid="uid://cojj3sqfgr3ed" path="res://MillionDollarGameJam/scenes/Bullet.tscn" id="5_6em1c"]
 [ext_resource type="AudioStream" uid="uid://l2q2n8r2fwef" path="res://MillionDollarGameJam/assets/SFX/Boost.ogg" id="6_kdrcq"]
+[ext_resource type="Texture2D" uid="uid://c7y1n1s0p1ckr" path="res://MillionDollarGameJam/assets/Player/TRUCK EXPLD 1.png" id="7_5etix"]
+[ext_resource type="Texture2D" uid="uid://bgd7ef0cisr7x" path="res://MillionDollarGameJam/assets/Player/TRUCK EXPLD 2.png" id="8_7le6e"]
+[ext_resource type="Texture2D" uid="uid://wigh4yknb031" path="res://MillionDollarGameJam/assets/Player/TRUCK EXPLD 3.png" id="9_ygarb"]
+[ext_resource type="AudioStream" uid="uid://bq8m3marpeg4w" path="res://MillionDollarGameJam/assets/SFX/EyeAttacks.ogg" id="10_7le6e"]
+[ext_resource type="AudioStream" uid="uid://daofgo5fwlu6q" path="res://MillionDollarGameJam/assets/SFX/Taking Damage.ogg" id="10_ygarb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0sui"]
 animations = [{
@@ -23,6 +28,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umy3q"]
 size = Vector2(20, 25)
+
+[sub_resource type="Animation" id="Animation_kdrcq"]
+resource_name = "Explosion"
 
 [sub_resource type="Animation" id="Animation_4rlcn"]
 resource_name = "Jet Combustion"
@@ -70,8 +78,34 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kdrcq"]
 _data = {
+&"Explosion": SubResource("Animation_kdrcq"),
 &"Jet Combustion": SubResource("Animation_4rlcn"),
 &"RESET": SubResource("Animation_6em1c")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_umy3q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_5etix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7le6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ygarb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_5etix"]
+resource_name = "explode"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7le6e"]
+_data = {
+&"explode": SubResource("Animation_5etix")
 }
 
 [node name="Ship_PLayer" type="CharacterBody2D" unique_id=986727395]
@@ -83,7 +117,6 @@ bullet_scene = ExtResource("5_6em1c")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1979100641]
 position = Vector2(0.5, -1.5)
 sprite_frames = SubResource("SpriteFrames_k0sui")
-frame = 1
 frame_progress = 0.96564263
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=259852729]
@@ -106,3 +139,19 @@ position = Vector2(0, -33)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=915678457]
 stream = ExtResource("6_kdrcq")
 volume_db = 1.778
+
+[node name="Explosion" type="AnimatedSprite2D" parent="." unique_id=1890614299]
+visible = false
+sprite_frames = SubResource("SpriteFrames_umy3q")
+frame = 1
+frame_progress = 0.7769548
+
+[node name="ExplosionAnimationPlayer" type="AnimationPlayer" parent="Explosion" unique_id=1523069303]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_7le6e")
+
+[node name="AudioStreamTakeDamage" type="AudioStreamPlayer" parent="." unique_id=1217666714]
+stream = ExtResource("10_ygarb")
+
+[node name="AudioStreamBlowUpShip" type="AudioStreamPlayer" parent="." unique_id=1162807438]
+stream = ExtResource("10_7le6e")
