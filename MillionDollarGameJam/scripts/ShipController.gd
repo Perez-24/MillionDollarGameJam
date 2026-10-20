@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-# HEALTH
 @onready var explosion = $Explosion
 @onready var health_bar = $"../HealthBar/TextureRect"
 @onready var loot_counter = $"../Counter/Counter"
@@ -8,6 +7,7 @@ extends CharacterBody2D
 @export var max_health: int = 8
 @onready var explosion_sfx: AudioStreamPlayer = $AudioStreamBlowUpShip
 @onready var takeDamage_sfx: AudioStreamPlayer = $AudioStreamTakeDamage
+@onready var playerText = $PlayerText
 
 var health: int = 8
 var damage_cooldown: float = 1.0
@@ -52,6 +52,11 @@ func takeDamage(amount: int = 1) -> void:
 		ship_destroyed.emit()
 		play_explosion()
 		print("You are dead! Game Over")
+		print("Conglaturation!")
+		playerText.text = "You and your friends are dead"
+		playerText.show()
+		await get_tree().create_timer(3.0).timeout
+		get_tree().change_scene_to_file("res://MillionDollarGameJam/scenes/title.tscn")
 
 # WEAPONS
 @export var bullet_scene: PackedScene
@@ -81,6 +86,11 @@ func collect_loot() -> void:
 	loot_count += 1
 	print("Loot collected: ", loot_count, "/4")
 	loot_counter.update_loot(loot_count)
+	if loot_count == 4:
+		print("Conglaturation!")
+		playerText.show()
+		await get_tree().create_timer(3.0).timeout
+		get_tree().change_scene_to_file("res://MillionDollarGameJam/scenes/credits.tscn")
 
 #CONTROL ENGINE FLICKER ANIMATION
 @onready var animationplayer: AnimationPlayer = $Jets/AnimationPlayer

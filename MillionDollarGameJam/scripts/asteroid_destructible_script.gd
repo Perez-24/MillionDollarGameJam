@@ -39,14 +39,13 @@ func take_hit() -> void:
 	is_destroying = true
 	
 	sound.play()
-	# Disable further collisions and stop movement.
 	collision_shape.set_deferred("disabled", true)
 	collision_layer = 0
 	collision_mask = 0
 	linear_velocity = Vector2.ZERO
 	angular_velocity = 0.0
 
-	# Crumble animation: intact -> broken -> debris.
+	# Asrteroid Crumble animation
 	intact_sprite.visible = false
 	broken_sprite.visible = true
 
@@ -55,7 +54,6 @@ func take_hit() -> void:
 	broken_sprite.visible = false
 	debris_sprite.visible = true
 
-	# Leave the debris visible briefly, then remove the asteroid.
 	await get_tree().create_timer(debris_duration).timeout
 
 	queue_free()

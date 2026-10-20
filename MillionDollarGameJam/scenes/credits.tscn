@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cxdw3am21cotv"]
+[gd_scene format=3 uid="uid://bjocxfnchtyto"]
 
 [ext_resource type="Script" uid="uid://cuheidcvr5f2u" path="res://MillionDollarGameJam/scripts/credits.gd" id="1_b0383"]
 [ext_resource type="Texture2D" uid="uid://mvjvjtpfjogl" path="res://MillionDollarGameJam/assets/UI/warp trading credits page.png" id="1_fe8iq"]
