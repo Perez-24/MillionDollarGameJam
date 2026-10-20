@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Space Tank Game"
-run/main_scene="uid://o706luokuqb1"
+run/main_scene="uid://chlvwv152ih6y"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://MillionDollarGameJam/icon.svg"
 
