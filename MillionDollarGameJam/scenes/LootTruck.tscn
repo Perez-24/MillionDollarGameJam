@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cuqtsrkuvuwun"]
+
+[ext_resource type="Texture2D" uid="uid://bjojkn36omovy" path="res://MillionDollarGameJam/assets/Player/LOOT_TRUCK.png" id="1_4ahxl"]
+[ext_resource type="Script" uid="uid://do1htesa8yu14" path="res://MillionDollarGameJam/scenes/LootTruck.gd" id="1_xh86y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0txnq"]
+radius = 28.635643
+
+[node name="LootTruck" type="Node2D" unique_id=1466878414]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1565488807]
+collision_layer = 3
+collision_mask = 15
+script = ExtResource("1_xh86y")
+
+[node name="LootTruck" type="Sprite2D" parent="Area2D" unique_id=1966144454]
+position = Vector2(2, 2)
+texture = ExtResource("1_4ahxl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=493624390]
+position = Vector2(4, 0)
+shape = SubResource("CircleShape2D_0txnq")
